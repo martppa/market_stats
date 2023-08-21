@@ -26,7 +26,7 @@ export default class ExpressServer implements Server {
 
     private configureServer(controllers: any): void {
         this.express = this.createServer(controllers);
-        this.express.use(logger(this.environment.getBuildType()));
+        this.express.use(logger(':date :method ":url"'));
         this.express.use(bodyParser.json);
         this.express.use(bodyParser.urlencoded({ extended: true }));
         this.express.use(header);

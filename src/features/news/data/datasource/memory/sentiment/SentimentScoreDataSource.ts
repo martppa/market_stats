@@ -8,7 +8,6 @@ export default class SentimentScoreDataSource implements ScoreDataSource {
     
     async getTextScore(text: string): Promise<number> {
         const result = this.sentiment.analyze(text)
-        console.log(result)
         return result.score
     }
 }
